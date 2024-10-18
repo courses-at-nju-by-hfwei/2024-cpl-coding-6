@@ -22,7 +22,31 @@ int main() {
   }
   printf("\n");
 
-  // TODO: binary insertion sort
+  // TODO
+  for (int i = 1; i < size; i++) {
+    int key = numbers[i];
+    int low = 0;
+    int high = i - 1;
+
+    while (low <= high) {
+      int mid = (low + high) / 2;
+      if (key >= numbers[mid]) {
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+
+    for (int j = i - 1; j >= low; j--) {
+      numbers[j + 1] = numbers[j];
+    }
+    numbers[low] = key;
+
+    for (int i = 0; i < size; i++) {
+      printf("%d ", numbers[i]);
+    }
+    printf("\n");
+  }
 
   // Print the sorted array
   for (int i = 0; i < size; i++) {
