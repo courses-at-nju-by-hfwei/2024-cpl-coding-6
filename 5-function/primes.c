@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
+bool IsPrime(int number);
+
 int main(void) {
   int max = 0;
   scanf("%d", &max);
@@ -11,17 +13,9 @@ int main(void) {
 
   // TODO: print primes between 1 and max
   for (int i = 2; i <= max; i++) {
-    bool is_prime = true;
-
-    for (int j = 2; j * j <= i; j++) {
-      // if j is a factor of i
-      if (i % j == 0) {
-        is_prime = false;
-        break;
-      }
-    }
-
-    if (is_prime) {
+    // caller
+    // callee
+    if (IsPrime(i)) {
       count++;
     }
   }
@@ -29,4 +23,15 @@ int main(void) {
   printf("\n %d ", count);
 
   return 0;
+}
+
+bool IsPrime(int number) {
+  for (int j = 2; j * j <= number; j++) {
+    // if j is a factor of i
+    if (number % j == 0) {
+      return false;
+    }
+  }
+
+  return true;
 }

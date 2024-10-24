@@ -9,6 +9,25 @@
 
 #define SIZE 6
 
+// int arr[]
+// int arr[][N]
+// goal: arr[i]; arr[i][j]
+
+// int arr[5]
+// arr[i]: the address of the first element + i * (sizeof (int))
+// int arr[5][7]
+// arr[2][3]
+// the address of the first element +
+//   2 * (number of cols * sizeof(int)) +
+//   3 * (sizeof (int))
+// -------
+// -------
+// -------
+// -------
+// -------
+
+// int arr[][M][N]
+// -----------------------------------
 void ExtendBoard(const int origin_board[][SIZE],
                  int extended_board[][SIZE + 2]);
 void PrintExtendedBoard(const int extended_board[][SIZE + 2]);

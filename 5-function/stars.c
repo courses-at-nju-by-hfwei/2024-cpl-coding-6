@@ -2,26 +2,32 @@
 
 #include <stdio.h>
 
+void PrintChar(char ch, int count);
+void NewLine(void);
+
 int main(void) {
   int lines = 0;
   scanf("%d", &lines);
 
   // TODO: print stars pyramid
   for (int i = 0; i < lines; i++) {
-    // print n - 1 - i spaces
-    for (int j = 0; j < lines - 1 - i; ++j) {
-      printf(" ");
-    }
-
-    // print 2 * i + stars
-    for (int j = 0; j < 2 * i + 1; ++j) {
-      printf("*");
-    }
+    PrintChar(' ', lines - 1 - i);
+    PrintChar('*', 2 * i + 1);
 
     if (i < lines - 1) {
-      printf("\n");
+      NewLine();
     }
   }
 
   return 0;
+}
+
+void PrintChar(char ch, int count) {
+  for (int i = 0; i < count; ++i) {
+    printf("%c", ch);
+  }
+}
+
+void NewLine(void) {
+  printf("\n");
 }

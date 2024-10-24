@@ -8,6 +8,8 @@
 int L[LEN_L] = { 1, 3, 5, 7, 9 };
 int R[LEN_R] = { 0, 2, 4, 6, 8, 10 };
 
+void Merge(const int L[], int l_len, const int R[], int r_len);
+
 int main(void) {
   // TODO: merge L and R into a sorted array
   int l = 0;
