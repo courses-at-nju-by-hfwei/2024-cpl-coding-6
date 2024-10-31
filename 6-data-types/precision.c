@@ -11,6 +11,8 @@ int main(void) {
 
   unsigned int pow = pow2(exp);
   printf("2^%d = %d\n", exp, pow);
+
+  return 0;
 }
 
 unsigned int pow2(unsigned int exp) {

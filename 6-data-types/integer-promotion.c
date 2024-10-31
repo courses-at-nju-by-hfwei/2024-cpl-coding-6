@@ -10,4 +10,6 @@ int main(void) {
   signed char result = left * mid / right;
 
   printf("result = %d\n", result);
+
+  return 0;
 }

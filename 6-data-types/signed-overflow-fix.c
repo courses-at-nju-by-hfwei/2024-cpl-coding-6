@@ -46,6 +46,8 @@ int main(void) {
   int left_neg = INT_MIN;
 
   printf("-%d = %d\n", left_neg, Neg(left_neg));
+
+  return 0;
 }
 
 int Add(int left, int right) {

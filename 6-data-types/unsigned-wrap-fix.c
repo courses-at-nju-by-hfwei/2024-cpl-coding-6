@@ -35,6 +35,8 @@ int main(void) {
 
   printf("%u * %u = %u\n", left_div, right_div, Div(left_div, right_div));
   printf("%u * %u = %u\n", left_div, right_div, Mod(left_div, right_div));
+
+  return 0;
 }
 
 unsigned int Add(unsigned int left, unsigned int right) {
