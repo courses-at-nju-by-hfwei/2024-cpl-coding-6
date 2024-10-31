@@ -7,13 +7,13 @@ int main() {
   double pi = 3.14159;
 
   // to obtain its fractional part
-  double fraction = 0;
+  double fraction = pi - (int) pi;
 
   // to compute num * num
   int num = 100000000; // (8 zeros)
 
   printf("LLONG_MAX = %lld\n", LLONG_MAX);
-  long long llint = num * num;
+  long long llint = ((long long) num) * num;
   printf("i = %lld\n", llint);
 
   return 0;

@@ -12,6 +12,7 @@ int Mod(int left, int right);
 int Neg(int left);
 
 int main(void) {
+
   // addition
   int left_add = INT_MAX / 2 + 1;
   int right_add = INT_MAX / 2 + 1;
@@ -51,19 +52,69 @@ int main(void) {
 }
 
 int Add(int left, int right) {
-  return left + right;
+//  if (left > UINT_MAX - right) {
+//    exit(1);
+//  }
+
+    if ((left > 0 && right > INT_MAX - left) ||
+        (left < 0 && right < INT_MIN - left)) {
+      printf("Overflow!\n");
+      exit(1);
+    } else {
+      return left + right;
+    }
 }
 
 int Sub(int left, int right) {
-  return left - right;
+  if ((left > 0 && right < INT_MIN + left) ||
+      (left < 0 && right > INT_MAX + left)) {
+    printf("Overflow!\n");
+    exit(1);
+  } else {
+    int sub = left - right;
+    return sub;
+  }
 }
 
 int Mul(int left, int right) {
-  return left * right;
+    if (left > 0) {
+      if (right > 0) { // left > 0 && right > 0
+        if (left > INT_MAX / right) {
+          printf("Overflow!\n");
+          exit(1);
+        }
+      } else { // left > 0 && right < 0
+        if (right < INT_MIN / left) {
+          printf("Overflow!\n");
+          exit(1);
+        }
+      }
+    } else {           // left <= 0
+      if (right > 0) { // left <= 0 && right > 0
+        if (left < INT_MIN / right) {
+          printf("Overflow!\n");
+          exit(1);
+        }
+      } else { // left <= 0 && right <= 0
+        if (left != 0 && right < INT_MAX / left) {
+          printf("Overflow!\n");
+          exit(1);
+        }
+      }
+    }
+
+    int mul = left * right;
+    return mul;
 }
 
+// INT_MIN / (-1)
 int Div(int left, int right) {
-  return left / right;
+    if (right == 0 || (left == INT_MIN && right == -1)) {
+      printf("Overflow!\n");
+      exit(1);
+    }
+
+    return left / right;
 }
 
 int Mod(int left, int right) {
@@ -74,62 +125,6 @@ int Neg(int left) {
   return -left;
 }
 
-// Add:
-//  if ((left > 0 && right > INT_MAX - left) ||
-//      (left < 0 && right < INT_MIN - left)) {
-//    printf("Overflow!\n");
-//    exit(1);
-//  } else {
-//    return left + right;
-//  }
-
-// Sub
-//if ((left > 0 && right < INT_MIN + left) ||
-//(left < 0 && right > INT_MAX + left)) {
-//printf("Overflow!\n");
-//exit(1);
-//} else {
-//int sub = left - right;
-//return sub;
-//}
-
-// Mul
-//  if (left > 0) {
-//    if (right > 0) { // left > 0 && right > 0
-//      if (left > INT_MAX / right) {
-//        printf("Overflow!\n");
-//        exit(1);
-//      }
-//    } else { // left > 0 && right < 0
-//      if (right < INT_MIN / left) {
-//        printf("Overflow!\n");
-//        exit(1);
-//      }
-//    }
-//  } else {           // left <= 0
-//    if (right > 0) { // left <= 0 && right > 0
-//      if (left < INT_MIN / right) {
-//        printf("Overflow!\n");
-//        exit(1);
-//      }
-//    } else { // left <= 0 && right <= 0
-//      if (left != 0 && right < INT_MAX / left) {
-//        printf("Overflow!\n");
-//        exit(1);
-//      }
-//    }
-//  }
-//
-//  int mul = left * right;
-//  return mul;
-
-// Div
-//  if (right == 0 || (left == INT_MIN && right == -1)) {
-//    printf("Overflow!\n");
-//    exit(1);
-//  }
-//
-//  return left / right;
 
 //  Mod
 //  if (right == 0 || (left == INT_MIN && right == -1)) {

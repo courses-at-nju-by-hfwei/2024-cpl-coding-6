@@ -13,7 +13,7 @@ int main(void) {
   int count = 0;
 
   // TODO: return the current time in seconds since the Unix epoch (January 1, 1970)
-
+  time_t start = time(NULL);
   for (int number = 2; number <= max; number++) {
     if (IsPrime(number)) {
       count++;
@@ -22,6 +22,8 @@ int main(void) {
   printf("\ncount = %d\n", count);
 
   // TODO: return the current time in seconds since the Unix epoch (January 1, 1970)
+  time_t end = time(NULL);
+  printf("%lld seconds\n", end - start);
 
   return 0;
 }

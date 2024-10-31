@@ -6,7 +6,7 @@
 int main(void) {
   int numbers[LEN] = {0};
 
-  for (unsigned int i = LEN; i >= 0; i--) {
+  for (unsigned int i = LEN - 1; i >= 0; i--) {
     printf("%u : %d\n", i, numbers[i]);
   }
 

@@ -28,7 +28,7 @@ int main() {
 
   // Array types
   int numbers[] = {0, 1, 2, 3, 4};
-  size_t len = sizeof numbers / sizeof(int);
+  size_t len = sizeof numbers / sizeof(numbers[0]);
   printf("Length of numbers: %zu\n", len);
 
   return 0;

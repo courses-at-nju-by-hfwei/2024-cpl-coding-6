@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 int main() {
-  // float pi = 3.14F;
+   float pi = 3.14F;
 
   // 3.402823e+38
   printf("FLT_MAX = %e\n", FLT_MAX);

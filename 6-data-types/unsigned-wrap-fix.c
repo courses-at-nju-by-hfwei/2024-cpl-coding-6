@@ -40,22 +40,42 @@ int main(void) {
 }
 
 unsigned int Add(unsigned int left, unsigned int right) {
+  if (left > UINT_MAX - right) {
+    exit(1);
+  }
+
    return left + right;
 }
 
 unsigned int Sub(unsigned int left, unsigned int right) {
-    return left - right;
+  if (left < right) {
+    exit(1);
+  }
+
+  return left - right;
 }
 
 unsigned int Mul(unsigned int left, unsigned int right) {
-    return left * right;
+  if (left > UINT_MAX / right) {
+    exit(1);
+  }
+
+  return left * right;
 }
 
 unsigned int Div(unsigned int left, unsigned int right) {
+  if (right == 0) {
+    exit(1);
+  }
+
   return left / right;
 }
 
 unsigned int Mod(unsigned int left, unsigned int right) {
+  if (right == 0) {
+    exit(1);
+  }
+
   return left % right;
 }
 
