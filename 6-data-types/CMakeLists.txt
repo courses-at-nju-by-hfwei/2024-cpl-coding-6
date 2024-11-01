@@ -1,11 +1,8 @@
-# Objects, size, precision, width, limits
 add_executable(size size.c)
-add_executable(precision precision.c)
 add_executable(int-limits int-limits.c)
 add_executable(exact-width exact-width.c)
 
 add_executable(unsigned unsigned.c)
-add_executable(sizet sizet.c)
 add_executable(timing-primes timing-primes.c)
 
 add_executable(char char.c)
@@ -28,4 +25,4 @@ add_executable(loop loop.c)
 add_executable(compare compare.c)
 target_link_libraries(compare m)
 
-add_executable(assoc-float assoc-float.c)
+add_executable(float-assoc float-assoc.c)
