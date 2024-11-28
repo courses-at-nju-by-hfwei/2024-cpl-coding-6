@@ -11,6 +11,15 @@ void Swap(int *left, int *right);
 void Print(const int *arr, int len);
 
 int main(void) {
+//  const int var = 0;
+//  var = 10;
+//  int var = 10;
+//  const int *ptr_var = &var;
+//  *ptr_var = 100;
+//  var = 100;
+//  int *ptr_var_1 = &var;
+//  *ptr_var_1 = 1000;
+
   int len = 0;
   scanf("%d", &len);
 
@@ -63,6 +72,8 @@ void Swap(int *left, int *right) {
 // TODO: Explain "const"
 void Print(const int *arr, int len) {
   printf("\n");
+//  *(arr + 10) = 10;
+//  arr[10] = 10;
   for (int i = 0; i < len; i++) {
     printf("%d ", arr[i]);
   }
