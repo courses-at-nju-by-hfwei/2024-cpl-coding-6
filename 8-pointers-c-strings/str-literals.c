@@ -7,11 +7,16 @@
 #include <stdlib.h>
 #include <string.h>
 
+int x = 100;
+int y;
+
 int main(void) {
+  // char msg[] = { 'H', 'e', ..., '!', '\0' };
   char msg[] = "Hello World!";
   msg[0] = 'N';
   printf("%s\n", msg);
 
+  // "Goodbye World!" type: char [];
   char *ptr_msg = "Goodbye World!";
   ptr_msg[0] = 'N';
   printf("%s\n", msg);
