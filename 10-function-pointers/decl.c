@@ -7,7 +7,7 @@ int main() {
 
   int (*musician_score_table)[10];
 
-  int *StrCpyStd(char *dest, const char *src);
+  char *StrCpyStd(char *dest, const char *src);
 
   int (*comp)(const void *left, const void *right);
 
@@ -15,7 +15,10 @@ int main() {
   int atexit(void (*func)(void));
 
   // see https://en.cppreference.com/w/c/program/signal
-  void (*signal(int sig, void (*handler)(int)))(int);
+  typedef void (*handler)(int);
+  handler signal(int sig, handler h);
+
+//  void (*signal(int sig, void (*handler)(int)))(int);
 
   char (*(*func(int num, char *str))[3])(void);
 
