@@ -10,11 +10,16 @@
 
 typedef char *sds;
 
+// sds: simple dynamic string (Redis database)
 struct sdshdr {
   int len;
   int free;
+  // flexible array member
   char buf[];
+// char *buf;
 };
+
+//int names[0] = {};
 
 static inline size_t sdslen(const sds s) {
   struct sdshdr *sh = (void *) (s - sizeof(struct sdshdr));

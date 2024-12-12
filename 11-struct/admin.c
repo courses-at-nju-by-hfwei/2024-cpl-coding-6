@@ -4,9 +4,12 @@
 #include <stdio.h>
 #include <ctype.h>
 
+void Print(char *first_name, char *last_name, int score);
+
 int main(void) {
-  char first_name[] = "Tayu";
-  char last_name[] = "Lo";
+  char luo_first_name[] = "Tayu";
+  char luo_last_name[] = "Lo";
+  char cui_first_name[] = "Jian";
 
   char gender = 'm';
 
