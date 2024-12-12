@@ -1,5 +1,10 @@
 # `12-struct`
 
+## TODO
+- Union in the `musician` example: array of albums
+
+## Contents
+
 - `struct`
 - `struct musician`
 - `typedef struct musician`
